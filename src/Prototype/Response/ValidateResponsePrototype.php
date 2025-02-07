@@ -1,4 +1,5 @@
 <?php
+
 namespace Prototype\Response;
 
 use Enum\HttpStatusCode;

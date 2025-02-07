@@ -1,4 +1,5 @@
 <?php
+
 namespace Core;
 
 use Prototype\Response\ValidateResponsePrototype;

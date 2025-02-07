@@ -1,4 +1,5 @@
 <?php
+
 namespace Core;
 
 use JetBrains\PhpStorm\NoReturn;

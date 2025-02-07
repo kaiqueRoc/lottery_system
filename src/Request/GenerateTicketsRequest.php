@@ -1,4 +1,5 @@
 <?php
+
 namespace Request;
 
 use Prototype\Response\ValidateResponsePrototype;
