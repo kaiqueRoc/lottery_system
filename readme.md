@@ -1,6 +1,6 @@
 # Lottery API
 
-Este projeto implementa uma API para gerar e verificar bilhetes de loteria. Foi construído em PHP, com Docker para facilitar a configuração e execução do ambiente. A API permite registrar usuários, realizar sorteios e verificar bilhetes.
+Este projeto implementa uma API para gerar e verificar bilhetes de loteria. Foi construído em PHP, com Docker para facilitar a configuração e execução do ambiente. A API permite realizar sorteios, gerar bilhete ganhador e validar bilhete.
 
 ## Tecnologias Utilizadas
 
