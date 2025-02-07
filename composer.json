@@ -1,0 +1,31 @@
+{
+  "name": "monetizze/lottery-api",
+  "description": "API para sorteios de loteria",
+  "require": {
+    "php": "^8.2",
+    "firebase/php-jwt": "^6.0",
+    "vlucas/phpdotenv": "^5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Core\\": "src/Core/",
+      "Services\\": "src/Services/",
+      "Models\\": "src/Models/",
+      "Controllers\\": "src/Controllers/",
+      "Views\\": "src/Views/",
+      "Prototype\\": "src/Prototype/",
+      "Request\\": "src/Request/",
+      "Enum\\": "src/Enum/"
+    }
+  },
+
+  "require-dev": {
+    "phpunit/phpunit": "^10.0",
+    "friendsofphp/php-cs-fixer": "^3.0"
+  },
+
+  "scripts": {
+    "test": "php vendor/bin/phpunit --debug",
+    "format": "php-cs-fixer fix --rules=@PSR12"
+  }
+}
