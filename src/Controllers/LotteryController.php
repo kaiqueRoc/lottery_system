@@ -2,14 +2,16 @@
 
 namespace Controllers;
 
+use AllowDynamicProperties;
 use Core\RequestValidatorCore;
 use Core\ResponseValidatorCore;
 use Enum\HttpStatusCode;
-use InvalidArgumentException;
+use Helpers\HtmlRendererHelpers;
 use Services\LotteryService;
 use Services\TicketService;
+use InvalidArgumentException;
 
-class LotteryController
+#[AllowDynamicProperties] class LotteryController
 {
     private LotteryService $lotteryService;
     private TicketService $ticketService;
@@ -51,19 +53,21 @@ class LotteryController
         }
     }
 
-    public function checkTickets($winningTicket, $tickets): void
+    public function checkTickets(array $winningTicket, array $tickets): void
     {
         try {
             RequestValidatorCore::validateCheckTickets($winningTicket, $tickets);
 
             $results = $this->ticketService->checkTickets($winningTicket, $tickets);
 
-            include 'Views/results.php';
+            $htmlResponse = HtmlRendererHelpers::renderTicketsTable($results);
+
+            echo $htmlResponse;
 
         } catch (InvalidArgumentException $e) {
             ResponseValidatorCore::error($e->getMessage(), HttpStatusCode::BAD_REQUEST);
         } catch (\Exception $e) {
-            ResponseValidatorCore::error("Error checked tickets: " . $e->getMessage(), HttpStatusCode::INTERNAL_SERVER_ERROR);
+            ResponseValidatorCore::error("Error checking tickets: " . $e->getMessage(), HttpStatusCode::INTERNAL_SERVER_ERROR);
         }
     }
 }

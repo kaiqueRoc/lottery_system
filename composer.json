@@ -12,10 +12,10 @@
       "Services\\": "src/Services/",
       "Models\\": "src/Models/",
       "Controllers\\": "src/Controllers/",
-      "Views\\": "src/Views/",
       "Prototype\\": "src/Prototype/",
       "Request\\": "src/Request/",
-      "Enum\\": "src/Enum/"
+      "Enum\\": "src/Enum/",
+      "Helpers\\": "src/Helpers/"
     }
   },
 

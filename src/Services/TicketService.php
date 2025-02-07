@@ -28,13 +28,12 @@ class TicketService
 
         return $tickets;
     }
-    public function checkTickets($winningTicket, $tickets): array
+    public function checkTickets(array $winningTicket, array $tickets): array
     {
         $results = [];
 
         foreach ($tickets as $ticket) {
             $ticketNumbers = is_array($ticket) ? $ticket : $ticket->getNumbers();
-
             $matches = array_intersect($winningTicket, $ticketNumbers);
 
             $results[] = [
@@ -45,4 +44,5 @@ class TicketService
 
         return $results;
     }
+
 }
